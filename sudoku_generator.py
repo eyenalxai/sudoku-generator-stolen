@@ -13,7 +13,7 @@ def main():
         'easy': (35, 0),
         'medium': (81, 5),
         'hard': (81, 10),
-        'extreme': (81, 15)
+        'extreme': (81, 30)
     }
 
     # getting desired difficulty from command line
