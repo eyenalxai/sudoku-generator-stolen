@@ -77,6 +77,7 @@ class Generator:
         new_set = [(x, self.board.get_density(x)) for x in existing]
         elements = [x[0] for x in sorted(new_set, key=lambda x: x[1], reverse=True)]
 
+        # count_iterations = 0
         # for each cell in sorted list
         for cell in elements:
             original = cell.value
@@ -93,6 +94,10 @@ class Generator:
 
                 # create instance of solver
                 s = Solver(temp)
+
+                # count_iterations += 1
+                # if (count_iterations % 100) == 0:
+                #     print("Iterations: " + str(count_iterations))
 
                 # if solver can fill every box and the solution is valid then
                 # puzzle becomes ambiguous after removing particular cell, so we can break out
