@@ -1,10 +1,12 @@
 # !/usr/bin/python
+import json
+
 from Sudoku.Generator import *
 
 
 def main():
     sudokus: list[str] = []
-    needed_length = 1
+    needed_length = 10
 
     # setting difficulties and their cutoffs for each solve method
     difficulties = {
@@ -52,6 +54,10 @@ def main():
     # Print out the sudokus one by one
     for sudoku in sudokus:
         print(sudoku)
+
+    # Write the sudokus to a json file
+    with open('sudokus.json', 'w') as f:
+        json.dump(sudokus, f)
 
 
 if __name__ == "__main__":
